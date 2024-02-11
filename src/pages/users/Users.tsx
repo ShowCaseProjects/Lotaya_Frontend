@@ -1,5 +1,5 @@
 
-import "./Users.scss";
+import "./users.scss";
 import usePaymentMethod from "./PaymentMethod.Data";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
