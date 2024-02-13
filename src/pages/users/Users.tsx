@@ -7,7 +7,6 @@ import TableCell  from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useState } from "react";
 import {  Button, TableHead,  TablePagination } from "@mui/material";
 import React from "react";
 
@@ -56,24 +55,25 @@ const columns: readonly Column[] = [
   },
 ];
 
-interface PaymentMethod {
-  paymentMethodId: string;
-  userId: string;
-  receiverAccountName: string;
-  receiverAccount: string;
-  amount: string;
-  paymentConfirmationCode: string;
-  registerDate:string;
-  updatedDate:string;
-}
+// interface PaymentMethod {
+//   paymentMethodId: string;
+//   userId: string;
+//   receiverAccountName: string;
+//   receiverAccount: string;
+//   amount: string;
+//   paymentConfirmationCode: string;
+//   registerDate:string;
+//   updatedDate:string;
+// }
 
 const Users = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const {paymentmethods}=usePaymentMethod();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event: unknown, newPage: number) => {
+    console.log(event)
     setPage(newPage);
   };
 
@@ -89,7 +89,7 @@ const Users = () => {
     <div className="users">
       <div className="info">
         <h1>Users</h1>
-        <button onClick={() => setOpen(true)}>Add New User</button>
+        {/* <button onClick={() => setOpen(true)}>Add New User</button> */}
       </div>
       <Paper sx={{ width: '89%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 800 }}>

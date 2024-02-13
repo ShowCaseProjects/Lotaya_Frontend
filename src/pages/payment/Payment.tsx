@@ -62,6 +62,7 @@ const Payment = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event: unknown, newPage: number) => {
+    console.log(event)
     setPage(newPage);
   };
 
@@ -70,7 +71,7 @@ const Payment = () => {
     setPage(0);
   };
   const handleClick=(id:string) =>{
-     
+    console.log(id)
   };
   
   return (
