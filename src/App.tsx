@@ -1,5 +1,23 @@
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { AuthProvider } from "./hooks/useAuth";
+// import { AppRoutes } from "./pages/routes/routes";
+
+// function App() {
+// const queryClient = new QueryClient();
+// return(
+//   <>
+//    <AuthProvider>
+//       <QueryClientProvider client={queryClient}>
+//               <AppRoutes />
+//             </QueryClientProvider>
+//  </AuthProvider>
+//  </>);
+// }
+
+// export default App;
+
 import Home from "./pages/home/Home";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, Navigate } from "react-router-dom";
 import Users from "./pages/users/Users";
 import Products from "./pages/payment/Payment";
 import Navbar from "./components/navbar/Navbar";
@@ -37,37 +55,36 @@ function App() {
     );
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/users",
-          element: <Users />,
-        },
-        {
-          path: "/products",
-          element: <Products />,
-        },
-        {
-          path: "/users/:id",
-          element: <User />,
-        },
-        {
-          path: "/products/:id",
-          element: <Product />,
-        },
-      ],
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
+  const router = createBrowserRouter([{
+    path: "/signIn",
+    element: <Login />,
+  },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/users/:id",
+        element: <User />,
+      },
+      {
+        path: "/products/:id",
+        element: <Product />,
+      },
+    ],
+  },
   ]);
 
   return <RouterProvider router={router} />;

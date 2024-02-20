@@ -89,9 +89,8 @@ const Users = () => {
     <div className="users">
       <div className="info">
         <h1>Users</h1>
-        {/* <button onClick={() => setOpen(true)}>Add New User</button> */}
       </div>
-      <Paper sx={{ width: '89%', overflow: 'hidden' }}>
+      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 800 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -100,7 +99,8 @@ const Users = () => {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth ,
+                           backgroundColor:'#F4F0E7'}}        
                 >
                   {column.label}
                 </TableCell>
@@ -124,7 +124,7 @@ const Users = () => {
                       );
                     })}
                     <TableCell>
-                    <Button variant="contained" onClick={() => handleClick(row.paymentMethodId)}>Update</Button>
+                    <Button variant="contained" onClick={() => handleClick(row.paymentMethodId)}>Details</Button>
                     </TableCell>
                     <TableCell>
                     <Button variant="contained" onClick={() => handleClick(row.paymentMethodId)}>Delete</Button>

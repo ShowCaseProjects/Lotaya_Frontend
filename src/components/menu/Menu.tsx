@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./menu.scss";
 import { menu } from "../../data";
+import { authContextValueType, useAuth } from "../../hooks/useAuth";
 
 const Menu = () => {
+  const { isSignIn } = useAuth() as authContextValueType;
+  if (!isSignIn) {
+    return <Navigate to='/signIn'></Navigate>
+  }
   return (
     <div className="menu">
       {menu.map((item) => (
