@@ -1,24 +1,40 @@
-import { ThemeProvider } from "@emotion/react";
-import { createTheme } from "@mui/material";
+import { AppBar, createTheme, CssBaseline, styled, ThemeProvider } from "@mui/material";
 
 
-type formData={
-  useId:string;
-  password:string;
+type formData = {
+  useId: string;
+  password: string;
 };
 
-export type signInRequestBody=formData;
+export type signInRequestBody = formData;
 
-export const signIn=()=>e
-{
-  const theme=createTeheme 
-  interface <a ehjeref="e"></a>
-  return(
-    <>
-     <ThemeProvider theme={theme}>
-
-     </ThemeProvider>
-     </>
+export const signIn = () => {
+  const theme = createTheme(
+    {
+      components: {
+        MuiFormHelperText: {
+          styleOverrides: {
+            root: {
+              margin: '0 auto'
+            }
+          }
+        }
+      }
+    }
   );
-}
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <StyledAppBar>
 
+        </StyledAppBar>
+      </ThemeProvider>
+    </>
+  );
+}e
+
+export const StyledAppBar = styled(AppBar)({
+  color: 'white',
+  backgroundColor: '#14325F'
+});
