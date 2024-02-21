@@ -23,7 +23,6 @@ import Products from "./pages/payment/Payment";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
-import Login from "./pages/login/Login";
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
@@ -31,6 +30,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { SignIn } from "./pages/login/Login";
 
 
 const queryClient = new QueryClient();
@@ -57,7 +57,7 @@ function App() {
 
   const router = createBrowserRouter([{
     path: "/signIn",
-    element: <Login />,
+    element: <SignIn />,
   },
   {
     path: "/",
